@@ -118,8 +118,12 @@ def sql_cols(df, usage="sql"):
             base += ", `%s`=VALUES(`%s`)" % (col, col)
         return base
 
+# engine = create_engine(
+#     "mysql+pymysql://{}:{}@{}:{}/{}".format('root', 'chihiro123', '47.107.35.189', 3306, 'mysql', ),
+#     connect_args={"charset": "utf8"}, echo=True, )
+
 engine = create_engine(
-    "mysql+pymysql://{}:{}@{}:{}/{}".format('root', 'chihiro123', '47.107.35.189', 3306, 'mysql', ),
+    "mysql+pymysql://{}:{}@{}:{}/{}".format('root', 'Chihiro123+', '10.3.2.25', 3306, 'base', ),
     connect_args={"charset": "utf8"}, echo=True, )
 
 def to_sql(tb_name, conn, dataframe, type="update", chunksize=2000, debug=False):
@@ -352,6 +356,21 @@ def read_pdf_all(path):
         a = '无'
         return [a, y]
 
+def len_pdf():
+    all_files = '/mnt/MYSHARE'
+    lls = []
+    dfp = pd.read_sql("select pdf_name from pdf_match", engine)
+    opdf = dfp['pdf_name'].values.tolist()
+    for dirpath, dirnames, filenames in os.walk(all_files):
+        for filename in filenames:
+            if filename in opdf:
+                pass
+            else:
+                cc = dirpath + '\\'+filename
+                if cc[-4:] in ['.pdf', '.doc']:
+                    lls.append(cc)
+    return lls
+
 
 # def doc2pdf(doc_name, pdf_name):
 #     """
@@ -432,7 +451,7 @@ def analysis():
 def main():
     print('start')
     # all_files = r'\\dmp1\resource\pdf\港股其他 (月報表等)'
-    all_files = r'\\vm-zdhjg64\resource\pdf\港股其他 (月報表等)'
+    all_files = '/mnt/MYSHARE'
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
