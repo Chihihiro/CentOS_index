@@ -11,7 +11,7 @@ import datetime
 import shutil
 import smtplib
 from sqlalchemy import create_engine
-from win32com import client
+# from win32com import client
 from email.header import Header
 from email.mime.text import MIMEText
 from email.utils import parseaddr, formataddr
@@ -353,22 +353,22 @@ def read_pdf_all(path):
         return [a, y]
 
 
-def doc2pdf(doc_name, pdf_name):
-    """
-    :word文件转pdf
-    :param doc_name word文件名称
-    :param pdf_name 转换后pdf文件名称
-    """
-    try:
-        word = client.DispatchEx("Word.Application")
-        if os.path.exists(pdf_name):
-            os.remove(pdf_name)
-        worddoc = word.Documents.Open(doc_name, ReadOnly=1)
-        worddoc.SaveAs(pdf_name, FileFormat=17)
-        worddoc.Close()
-        return pdf_name
-    except:
-        return 1
+# def doc2pdf(doc_name, pdf_name):
+#     """
+#     :word文件转pdf
+#     :param doc_name word文件名称
+#     :param pdf_name 转换后pdf文件名称
+#     """
+#     try:
+#         word = client.DispatchEx("Word.Application")
+#         if os.path.exists(pdf_name):
+#             os.remove(pdf_name)
+#         worddoc = word.Documents.Open(doc_name, ReadOnly=1)
+#         worddoc.SaveAs(pdf_name, FileFormat=17)
+#         worddoc.Close()
+#         return pdf_name
+#     except:
+#         return 1
 
 
 def analysis():
@@ -409,24 +409,24 @@ def analysis():
     dataframe.to_csv(p + now, encoding='utf_8_sig')
 
 
-def all_doc2pdf(path):
-    files = os.listdir(path)
-    docs = []
-    for i in files:
-        if '.doc' in i:
-            docs.append(i)
-        else:
-            pass
-    for doc in docs:
-        in_name = path + doc
-        out_name = path + doc[:-3] + 'pdf'
-        try:
-            doc2pdf(in_name, out_name)
-            print(doc + 'successful')
-        except BaseException as e:
-            print(e)
-        else:
-            pass
+# def all_doc2pdf(path):
+#     files = os.listdir(path)
+#     docs = []
+#     for i in files:
+#         if '.doc' in i:
+#             docs.append(i)
+#         else:
+#             pass
+#     for doc in docs:
+#         in_name = path + doc
+#         out_name = path + doc[:-3] + 'pdf'
+#         try:
+#             doc2pdf(in_name, out_name)
+#             print(doc + 'successful')
+#         except BaseException as e:
+#             print(e)
+#         else:
+#             pass
 
 
 def main():
@@ -455,8 +455,8 @@ def main():
     print('开始解析word')
 
     """word转pdf"""
-    all_doc2pdf(path=pdfaddress)
-    print('doc 转 pdf 成功')
+    # all_doc2pdf(path=pdfaddress)
+    # print('doc 转 pdf 成功')
     """
     迁移存放pdf文件，存放旧的csv文件
     """
