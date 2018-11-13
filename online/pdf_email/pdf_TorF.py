@@ -483,7 +483,7 @@ def main():
     for ll in lls:
         shutil.copy(ll, pdfaddress)
 
-    print('开始解析word')
+    # print('开始解析word')
 
     """word转pdf"""
     # all_doc2pdf(path=pdfaddress)
@@ -533,7 +533,7 @@ def work():
 
 
 if __name__ == '__main__':
-    main()
+    work()
 
 
 
