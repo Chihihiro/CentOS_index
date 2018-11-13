@@ -471,11 +471,11 @@ def main():
             if filename in opdf:
                 pass
             else:
-                cc = dirpath + '\\'+filename
+                cc = dirpath + '/'+filename
                 if cc[-4:] in ['.pdf', '.doc']:
                     lls.append(cc)
     print('新的pdf有'+str(len(lls)))
-    pdfaddress = os.getcwd() + '\\pdfs\\'
+    pdfaddress = os.getcwd() + '/pdfs/'
     if not os.path.isdir(pdfaddress):
         os.mkdir(pdfaddress)
 
@@ -491,19 +491,19 @@ def main():
     迁移存放pdf文件，存放旧的csv文件
     """
     base_path = os.getcwd()
-    PATH = os.getcwd() + '\\被解析过的pdfs\\'
+    PATH = os.getcwd() + '/被解析过的pdfs/'
     if not os.path.isdir(PATH):
         os.mkdir(PATH)
-    csv_path = os.getcwd() + '\\存放旧csv\\'
+    csv_path = os.getcwd() + '/存放旧csv/'
     if not os.path.isdir(csv_path):
         os.mkdir(csv_path)
-    csv = mv_file(base_path + '\\', csv_path, type_file='.csv')
+    csv = mv_file(base_path + '/', csv_path, type_file='.csv')
     csv.move_files()
     analysis()
     print('解析PDF成功')
 
     strtime = now_time()
-    new_path = PATH + strtime + '\\'
+    new_path = PATH + strtime + '/'
     if not os.path.isdir(new_path):
         os.mkdir(new_path)
     a = mv_file(pdfaddress, new_path, type_file='all')
