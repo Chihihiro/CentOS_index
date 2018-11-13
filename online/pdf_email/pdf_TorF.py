@@ -92,7 +92,7 @@ class to_email:
         a = mv_file(old_path=path, new_path=path, type_file='.csv')
         b = a.read_files()
 
-        lu = path + '\\' + b[0]
+        lu = path + '/' + b[0]
         att1 = MIMEText(open(lu, 'rb').read(), 'base64', 'utf-8')
         att1["Content-Type"] = 'application/octet-stream'
         att1["Content-Disposition"] = 'attachment; filename="{}"'.format(b[0])
