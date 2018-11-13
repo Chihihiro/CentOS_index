@@ -437,6 +437,7 @@ def analysis():
     dataframe['解析不出的'] = dataframe['内容和状况'].apply(lambda x: '解析失败,或者有图片' if '解析' in x else 'pass')
     now = now_time2() + '.csv'
     dataframe.to_csv(p + now, encoding='utf_8_sig')
+    print('CSV制作完成')
 
 
 # def all_doc2pdf(path):
