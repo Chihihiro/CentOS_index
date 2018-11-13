@@ -4,7 +4,7 @@ from .pdf_TorF import main, len_pdf
 import datetime
 
 
-def now_time2(a=0):
+def now_num(a=0):
     now = datetime.datetime.now()
     delta = datetime.timedelta(minutes=a)
     n_days = now + delta
@@ -15,7 +15,7 @@ def now_time2(a=0):
 
 
 def say_work():
-    time = now_time2()
+    time = now_num()
     num = len(len_pdf())
     if 6 > time >= 22 and num > 50:
         main()
@@ -42,7 +42,7 @@ def printHello():
 
 
 def work():
-    time = now_time2()
+    time = now_num()
     num = len(len_pdf())
     if 6 > time >= 22 and num > 50:
         main()
