@@ -1,5 +1,5 @@
 from threading import Timer
-from online.pdf_email.pdf_TorF import main,len_pdf
+from .pdf_TorF import main, len_pdf
 import datetime
 
 
