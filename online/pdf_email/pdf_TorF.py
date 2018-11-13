@@ -47,8 +47,8 @@ class mv_file:
             os.makedirs(self.new_path)  # 创建路径
         files_list = self.read_files()
         for i in files_list:
-            srcfile = self.old_path + '\\' + i
-            dstfile = self.new_path + '\\' + i
+            srcfile = self.old_path + '/' + i
+            dstfile = self.new_path + '/' + i
             shutil.move(srcfile, dstfile)
             print("move %s -> %s" % (srcfile, dstfile))
 
@@ -57,8 +57,8 @@ class mv_file:
             os.makedirs(self.new_path)  # 创建路径
         files_list = self.read_files()
         for i in files_list:
-            srcfile = self.old_path + '\\' + i
-            dstfile = self.new_path + '\\' + i
+            srcfile = self.old_path + '/' + i
+            dstfile = self.new_path + '/' + i
             shutil.copy(srcfile, dstfile)
             print("copy %s -> %s" % (srcfile, dstfile))
 
@@ -407,7 +407,7 @@ def analysis():
     :path: 读取文件夹的路径
     """
     p = os.getcwd()
-    pp = p + '\\pdfs\\'
+    pp = p + '/pdfs/'
     files = os.listdir(pp)
     """
     读取数据库里面已经解析的pdf
