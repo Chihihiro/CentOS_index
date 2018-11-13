@@ -91,17 +91,17 @@ class to_email:
         path = os.getcwd()
         a = mv_file(old_path=path, new_path=path, type_file='.csv')
         b = a.read_files()
-
-        lu = path + b[0]
-        att1 = MIMEText(open(lu, 'rb').read(), 'base64', 'utf-8')
-        att1["Content-Type"] = 'application/octet-stream'
-        att1["Content-Disposition"] = 'attachment; filename="{}"'.format(b[0])
-        msg.attach(att1)
-        server = smtplib.SMTP(smtp_server, 25)
-        server.set_debuglevel(1)
-        server.login(from_addr, password)
-        server.sendmail(from_addr, [self.to_addre], msg.as_string())
-        server.quit()
+        if len(b) > 0:
+            lu = path + b[0]
+            att1 = MIMEText(open(lu, 'rb').read(), 'base64', 'utf-8')
+            att1["Content-Type"] = 'application/octet-stream'
+            att1["Content-Disposition"] = 'attachment; filename="{}"'.format(b[0])
+            msg.attach(att1)
+            server = smtplib.SMTP(smtp_server, 25)
+            server.set_debuglevel(1)
+            server.login(from_addr, password)
+            server.sendmail(from_addr, [self.to_addre], msg.as_string())
+            server.quit()
 
 
 def sql_cols(df, usage="sql"):
