@@ -523,21 +523,13 @@ def work():
     num = len(len_pdf())
     if 6 > time >= 22 and num > 50:
         main()
-        # t = Timer(1*60*60, say_work)
-        # t.start()
     elif time == 23:
         if num == 0:
-            # t = Timer(1 * 60 * 60, say_work)
-            # t.start()
             pass
         else:
             main()
-            # t = Timer(1*60*60, say_work)
-            # t.start()
     else:
-        print("Hello World")
-        # t = Timer(1*60*60, say_work)
-        # t.start()
+        print("Hello 本次没有解析")
 
 
 if __name__ == '__main__':
