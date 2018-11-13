@@ -435,7 +435,7 @@ def analysis():
 
     dataframe = pd.DataFrame(result, columns=['PDF名字', '解析结果', '内容和状况'])
     dataframe['解析不出的'] = dataframe['内容和状况'].apply(lambda x: '解析失败,或者有图片' if '解析' in x else 'pass')
-    now = '\\' + now_time2() + '.csv'
+    now = now_time2() + '.csv'
     dataframe.to_csv(p + now, encoding='utf_8_sig')
 
 
@@ -511,11 +511,11 @@ def main():
     """
     传入邮箱
     """
-    if len(lls) > 0:
-        # e = to_email('hkstock@gildata.com')
-        # e.course()
-        e1 = to_email('632207812@qq.com')
-        e1.course()
+
+    # e = to_email('hkstock@gildata.com')
+    # e.course()
+    e1 = to_email('632207812@qq.com')
+    e1.course()
 
 def work():
     time = now_num()
