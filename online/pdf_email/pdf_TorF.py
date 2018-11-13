@@ -513,8 +513,8 @@ def main():
     传入邮箱
     """
     if len(lls) > 0:
-        # e = to_email('hkstock@gildata.com')
-        # e.course()
+        e = to_email('hkstock@gildata.com')
+        e.course()
         e1 = to_email('632207812@qq.com')
         e1.course()
 
@@ -541,7 +541,7 @@ def work():
 
 
 if __name__ == '__main__':
-    main()
+    work()
 
 
 
