@@ -519,8 +519,8 @@ def main():
     if len(lls) > 0:
         e = to_email('hkstock@gildata.com')
         e.course()
-        # e1 = to_email('632207812@qq.com')
-        # e1.course()
+        e1 = to_email('632207812@qq.com')
+        e1.course()
 
 def work():
     time = now_num()
