@@ -1,6 +1,6 @@
 #!usr/bin/python3
 from threading import Timer
-from .pdf_TorF import main, len_pdf
+from online.pdf_email.pdf_TorF import main, len_pdf
 import datetime
 
 
