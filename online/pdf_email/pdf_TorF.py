@@ -462,12 +462,15 @@ def analysis():
 
 def main():
     print('start')
-    # all_files = r'\\dmp1\resource\pdf\港股其他 (月報表等)'
-    all_files = '/mnt/chihiro/港股其他\ \(月報表等\)'
+    all_files = r'\\dmp1\resource\pdf\港股其他 (月報表等)'
+    # all_files = '/mnt/chihiro/港股其他\ \(月報表等\)'
+    if not os.path.isdir(all_files):
+        print('linxu文件夹不存在')
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
     for dirpath, dirnames, filenames in os.walk(all_files):
+        print(dirnames)
         for filename in filenames:
             if filename in opdf:
                 pass
@@ -533,7 +536,7 @@ def work():
 
 
 if __name__ == '__main__':
-    work()
+    main()
     print('Over')
 
 
