@@ -534,7 +534,6 @@ def work():
 
 if __name__ == '__main__':
     work()
-    print('Over')
 
 
 
