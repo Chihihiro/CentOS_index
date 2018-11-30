@@ -463,9 +463,11 @@ def analysis():
 def main():
     print('start')
     # all_files = r'\\dmp1\resource\pdf\港股其他 (月報表等)'
-    all_files = '/mnt/chihiro/pdf/港股其他\ \(月報表等\)'
+    all_files = '/mnt/chihiro/pdf/港股其他 (月報表等)'
     if not os.path.isdir(all_files):
         print('linxu文件夹不存在')
+    else:
+        print('linxu存在')
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
