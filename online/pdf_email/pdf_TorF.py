@@ -472,7 +472,6 @@ def main():
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
     for dirpath, dirnames, filenames in os.walk(all_files):
-        print(dirnames)
         for filename in filenames:
             if filename in opdf:
                 pass
