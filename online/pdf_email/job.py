@@ -1,6 +1,6 @@
 #!usr/bin/python3
 from threading import Timer
-from online.pdf_email.pdf_TorF import main, len_pdf
+import online.pdf_email.pdf_TorF as E
 import datetime
 
 
@@ -16,9 +16,9 @@ def now_num(a=0):
 
 def say_work():
     time = now_num()
-    num = len(len_pdf())
+    num = len(E.len_pdf())
     if 6 > time >= 22 and num > 50:
-        main()
+        E.main()
         t = Timer(1*60*60, say_work)
         t.start()
     elif time == 23:
@@ -26,7 +26,7 @@ def say_work():
             t = Timer(1 * 60 * 60, say_work)
             t.start()
         else:
-            main()
+            E.main()
             t = Timer(1*60*60, say_work)
             t.start()
     else:
@@ -43,9 +43,9 @@ def printHello():
 
 def work():
     time = now_num()
-    num = len(len_pdf())
+    num = len(E.len_pdf())
     if 6 > time >= 22 and num > 50:
-        main()
+        E.main()
         # t = Timer(1*60*60, say_work)
         # t.start()
     elif time == 23:
@@ -54,7 +54,7 @@ def work():
             # t.start()
             pass
         else:
-            main()
+            E.main()
             # t = Timer(1*60*60, say_work)
             # t.start()
     else:
