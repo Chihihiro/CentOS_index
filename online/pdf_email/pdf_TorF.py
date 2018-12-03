@@ -368,7 +368,7 @@ def read_pdf_all(path):
         return [a, y]
 
 def len_pdf():
-    all_files = '/mnt/chihiro/港股其他\ \(月報表等\)'
+    all_files = r'//vm-zdhjg64/resource/pdf/港股其他 (月報表等)'
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
@@ -462,8 +462,8 @@ def analysis():
 
 def main():
     print('start')
-    # all_files = r'\\dmp1\resource\pdf\港股其他 (月報表等)'
-    all_files = '/mnt/new'
+    all_files = r'/mnt/new'
+    # all_files = '/mnt/new'
     if not os.path.isdir(all_files):
         print('linxu文件夹不存在')
     else:
@@ -525,7 +525,7 @@ def main():
 def work():
     time = now_num()
     num = len(len_pdf())
-    if 6 > time >= 22 and num > 20:
+    if 22 > time >= 6 and num > 20:
         main()
     elif time == 23:
         if num == 0:
@@ -543,5 +543,16 @@ if __name__ == '__main__':
 
 
 
-
+    # time = now_num()
+    # num = len(len_pdf())
+    # print(time, num)
+    # if 22 > time >= 6 and num > 20:
+    #     print('1111')
+    # elif time == 23:
+    #     if num == 0:
+    #         pass
+    #     else:
+    #         print('22222')
+    # else:
+    #     print("Hello 本次没有解析")
 
