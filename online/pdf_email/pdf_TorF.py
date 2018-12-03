@@ -368,7 +368,7 @@ def read_pdf_all(path):
         return [a, y]
 
 def len_pdf():
-    all_files = r'//vm-zdhjg64/resource/pdf/港股其他 (月報表等)'
+    all_files = r'/mnt/new'
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
