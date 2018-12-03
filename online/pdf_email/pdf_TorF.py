@@ -525,7 +525,7 @@ def main():
 def work():
     time = now_num()
     num = len(len_pdf())
-    if 6 > time >= 22 and num > 50:
+    if 6 > time >= 22 and num > 20:
         main()
     elif time == 23:
         if num == 0:
