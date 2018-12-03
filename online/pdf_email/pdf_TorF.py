@@ -368,7 +368,8 @@ def read_pdf_all(path):
         return [a, y]
 
 def len_pdf():
-    all_files = r'/mnt/new'
+    # all_files = r'/mnt/new'
+    all_files = '//vm-zdhjg64/resource/pdf/港股其他 (月報表等)'
     lls = []
     dfp = pd.read_sql("select pdf_name from pdf_match", engine)
     opdf = dfp['pdf_name'].values.tolist()
@@ -462,8 +463,8 @@ def analysis():
 
 def main():
     print('start')
-    all_files = r'/mnt/new'
-    # all_files = '/mnt/new'
+    # all_files = r'/mnt/new'
+    all_files = '//vm-zdhjg64/resource/pdf/港股其他 (月報表等)'
     if not os.path.isdir(all_files):
         print('linxu文件夹不存在')
     else:
@@ -538,7 +539,7 @@ def work():
 
 
 if __name__ == '__main__':
-    work()
+    # work()
     print('Over')
 
 
